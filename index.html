@@ -1,47 +1,64 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>JavaScript Paper, Rock, Scissors</title>
-    <script>
-function game(){
-    var userChoice = prompt("Do you choose Rock, Paper or Scissors?").toLowerCase();
-    var computerChoice = Math.random();
-    if (computerChoice < 0.34) {
-		computerChoice = "rock";
-    } else if(computerChoice <= 0.67) {
-		computerChoice = "paper";
-    } else {
-		computerChoice = "scissors";
-    };
 
-    if (userChoice === computerChoice) {
-        alert("You both chose " + userChoice + ". This game is a tie!");
-    } else if (userChoice === "rock") {
-        if (computerChoice === "scissors") {
-            alert("You chose: " + userChoice + ".\nThe computer chose: " + computerChoice + "\n\nRock crushes Scissors. You win!");
-        } else {
-            alert("You chose: " + userChoice + ".\nThe computer chose: " + computerChoice + "\n\nPaper covers Rock. You lose!");
-        }
-    } else if (userChoice === "paper"){
-        if (computerChoice === "rock"){
-            alert("You chose: " + userChoice + ".\nThe computer chose: " + computerChoice + "\n\nPaper covers Rock. You win!");
-        } else {
-            alert("You chose: " + userChoice + ".\nThe computer chose: " + computerChoice + "\n\nScissors cut Paper. You lose!");
-        }
-    } else if (userChoice === "scissors"){
-        if (computerChoice === "rock"){
-            alert("You chose: " + userChoice + ".\nThe computer chose: " + computerChoice + "\n\nRock crushes Scissors. You lose!");
-        } else {
-            alert("You chose: " + userChoice + ".\nThe computer chose: " + computerChoice + "\n\nScissors cut Paper. You win!");
-        }
-    }
-    }
-    </script>
+<head>
+    <title>Paper, Rock, Scissors</title>
+    <link rel="stylesheet" type="text/css" href="sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="sweet-prompt.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-    <h1><center>Paper, Rock, Scissors</center></h1>
-
-    <p><center><button onclick="game()">Play!</button></center></p>
+    <div class="outerDiv">
+        <h1><center>Paper, Rock, Scissors</center></h1>
+        <div class="gameTypes">
+            <p>
+                <center>
+                    <button onclick="game()">Play Classic Game</button>
+                </center>
+            </p>
+            <h3><center>Outcomes for Classic Game:</h3></center>
+            <center>
+                <h4>Scissors cuts Paper<br>
+		Paper covers Rock<br>
+		Rock crushes Scissors</h4></center>
+        </div>
+        <div class="gameTypes">
+            <p>
+                <center>
+                    <button onclick="gameLS()">Play Paper, Rock, Scissors, Lizard, Spock</button>
+                </center>
+            </p>
+            <h3><center>Outcomes for Lizard, Spock:</h3></center>
+            <center>
+                <h4>Scissors cuts Paper<br>
+		Paper covers Rock<br>
+		Rock crushes Lizard<br>
+		Lizard poisons Spock<br>
+		Spock smashes Scissors<br>
+		Scissors decapitates Lizard<br>
+		Lizard eats Paper<br>
+		Paper disproves Spock<br>
+		Spock vaporizes Rock<br>
+		(and as it always has) Rock crushes scissors</h4></center>
+        </div>
+        <div class="gameTypes">
+            <p>
+                <center>
+                    <button onclick="gameNHB()">Play Ninja, Hunter, Bear</button>
+                </center>
+            </p>
+            <h3><center>Outcomes for Ninja, Hunter, Bear:</h3></center>
+            <center>
+                <h4>Ninja kills Hunter<br>
+		Hunter shoots Bear<br>
+		Bear eats Ninja</h4>
+                <center>
+        </div>
+    </div>
+    <script src="sweetalert.min.js"></script>
+    <script src="sweet-prompt.min.js"></script>
+    <script src="game.js"></script>
 </body>
+
 </html>

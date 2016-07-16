@@ -1,0 +1,14 @@
+html,
+body {
+    background-color: #56A5EC;
+}
+.outerDiv {
+    text-align: center;
+    height: auto;
+}
+.gameTypes {
+    vertical-align: top;
+    display: inline-block;
+    height: 100%;
+    width: 25%;
+}
